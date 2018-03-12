@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker build -t nodejs-python3.6 .
+  - docker run nodejs-python3.6 /bin/sh -c "python3.6 --version"
+  - docker run nodejs-python3.6 /bin/sh -c "pip3.6 --version"
+  - docker run nodejs-python3.6 /bin/sh -c "pipenv --version"
+  - docker run nodejs-python3.6 /bin/sh -c "node --version"
+  - docker run nodejs-python3.6 /bin/sh -c "yarn --version"
